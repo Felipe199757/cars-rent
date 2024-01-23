@@ -10,9 +10,10 @@ const getUserByToken = require("../helpers/get-user-by-token");
 
 module.exports = class UserController {
   static async register(request, response) {
-    const { name, email, cpf, birth, phone, password, confirmpassword, image } =
+    const { name, email, cpf, birth, phone, password, confirmpassword } =
       request.body;
-      
+      let image = request.file || ""
+
       if (!name) {
         response.status(422).json({ message: "Nome é obrigatorio" });
         return;
@@ -160,10 +161,18 @@ module.exports = class UserController {
 
     // const id = request.params.id;
 
+    
+
     const token = getToken(request);
     const user = await getUserByToken(token);
 
     const { name, email, phone, password, confirmpassword } = request.body;
+
+    
+    if(request.file){
+      user.image = request.file.filename
+    }
+
 
     if (!name) {
       response.status(422).json({ message: "Nome é obrigátorio" });

@@ -1,4 +1,4 @@
-const {DataTypes} = require("sequelize")
+const {DataTypes, Sequelize} = require("sequelize")
 
 const db = require("../db/conn")
 const User = require("./User")
@@ -23,7 +23,10 @@ const Car = db.define("Car", {
     isRented: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
-    }
+    },
+    // images:{
+    //     type: DataTypes.ARRAY(Sequelize.STRING)
+    // }
 })
 
 Car.belongsTo(User)

@@ -7,7 +7,7 @@ const User = require("../models/User");
 module.exports = class CarController {
   static async register(request, response) {
     const { model, brand, age, licensePlate, isRented } = request.body;
-
+    const images = request.files
     if (!model) {
       response.status(422).json({ message: "Modelo do veículo é necessário" });
       return;
@@ -40,6 +40,7 @@ module.exports = class CarController {
       brand,
       age,
       licensePlate,
+      images:[],
       isRented: false
     };
 

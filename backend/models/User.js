@@ -28,7 +28,7 @@ const User = db.define("User", {
         require: true
     },
     image: {
-        type: DataTypes.STRING,
+        type: DataTypes.BLOB,
     }
 
 })
