@@ -1,7 +1,7 @@
 const router = require("express").Router()
 
 const CarController = require("../controllers/CarController")
-const imageUpload = require("../helpers/image-upload")
+    const imageUpload = require("../helpers/image-upload")
 
 const verifyToken = require("../helpers/verify-token")
 

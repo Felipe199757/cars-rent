@@ -23,10 +23,10 @@ const Car = db.define("Car", {
     isRented: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
-    },
-    // images:{
-    //     type: DataTypes.ARRAY(Sequelize.STRING)
-    // }
+     },
+        images:{
+            type: DataTypes.JSON
+        }
 })
 
 Car.belongsTo(User)
