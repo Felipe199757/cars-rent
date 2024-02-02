@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react";
 import Input from "../../form/Input";
-import styles from "../../form/form.module.css"
+import styles from "../../form/Form.module.css"
 
 import { Context } from "../../../context/UserContext";
 
